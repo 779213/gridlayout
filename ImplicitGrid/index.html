@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Implicit Grid</title>
+    <style>
+        :root{
+            box-sizing: border-box;
+        }
+
+        *,
+        ::after,
+        ::before{
+            box-sizing: inherit;
+        }
+
+        body{
+            background-color: aqua;
+            font-family: "Comic Sans MS", times, serif;
+        }
+
+        .portfolio{
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        figure{
+            margin: 0;
+        }
+
+        figure img{
+
+            margin: 0;
+            display: block;
+        }
+
+        figure figcaption{
+            margin: 0;
+            padding: .3em .8em;
+            text-align: right;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+        }
+
+        /*GRID*/
+        .portfolio{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-rows: 1fr;
+            grid-gap: 1em;
+        }
+
+        .portfolio .featured{
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        /*GRID DENSE*/
+        .portfolio{
+            grid-auto-flow: dense;
+        }
+
+        /*FLEX*/
+
+        figure{
+            display: flex;
+            flex-direction: column;
+        }
+
+        figure img{
+            flex: 1;
+            /*ADATTAMENTO DEL CONTENUTO IN VERTICALE ED ORIZZONTALE*/
+            object-fit: cover;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="portfolio">
+    <figure>
+        <img src="assets/scala%20blu.jpg" alt="image1">
+<!--        DIDASCALIA-->
+        <figcaption>Image1</figcaption>
+    </figure>
+
+    <figure class="featured">
+        <img src="assets/vista1.jpg" alt="image2">
+<!--        DIDASCALIA-->
+        <figcaption>Image2</figcaption>
+    </figure>
+
+    <figure>
+        <img src="assets/vista2.jpg" alt="image3">
+<!--        DIDASCALIA-->
+        <figcaption>Image3</figcaption>
+    </figure>
+
+    <figure>
+        <img src="assets/vista3.jpg" alt="image4">
+<!--        DIDASCALIA-->
+        <figcaption>Image4</figcaption>
+    </figure>
+
+    <figure class="featured">
+        <img src="assets/vista4.jpg" alt="image5">
+<!--        DIDASCALIA-->
+        <figcaption>Image5</figcaption>
+    </figure>
+
+    <figure class="featured">
+        <img src="assets/vista5.jpg" alt="image6">
+<!--        DIDASCALIA-->
+        <figcaption>Image6</figcaption>
+    </figure>
+
+    <figure>
+        <img src="assets/vista9.jpeg" alt="image7">
+<!--        DIDASCALIA-->
+        <figcaption>Image7</figcaption>
+    </figure>
+
+</div>
+
+</body>
+</html>
